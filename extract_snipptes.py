@@ -4,7 +4,7 @@ seg = pysbd.Segmenter(language="en", clean=False)
 def extract_snippets(text:str,n:int=2):
         """ 
         Extracts snippets from text with a sliding window 
-        n : sentences per snippet returns list of sentences
+        n : sentences per snippet
         returns list of sentences
         """
         sentences = seg.segment(text)
