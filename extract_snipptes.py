@@ -1,11 +1,10 @@
 import nltk,math
 sent_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 
-def extract_snippets(text:str, n=2):
+def extract_snippets(text:str,n:int=2):
         """ 
-        Extracts snippets from text with a sliding window 
-        text: 
-        n : sliding window: sentences per snippet
+        Extracts snippets from text with n sliding windows
+        n : sentences per snippet
         returns list of sentences
         """
         sentences = sent_tokenizer.tokenize(text)
