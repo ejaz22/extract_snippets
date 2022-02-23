@@ -1,13 +1,13 @@
-import nltk,math
-sent_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+import pysbd,math
+seg = pysbd.Segmenter(language="en", clean=False)
 
 def extract_snippets(text:str,n:int=2):
         """ 
-        Extracts snippets from text with n sliding windows
-        n : sentences per snippet
+        Extracts snippets from text with a sliding window 
+        n : sentences per snippet returns list of sentences
         returns list of sentences
         """
-        sentences = sent_tokenizer.tokenize(text)
+        sentences = seg.segment(text)
         snippets = []
         i = 0
         last_index = 0
